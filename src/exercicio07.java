@@ -8,13 +8,18 @@ public class exercicio07 {
         float valor;
         char sexo;
         int idade;
+        int contMasc = 0; //Quantidade de eleitores masculinos.
+        int contFem = 0;
+        float idadeMasc = 0; //Soma das idades dos eleitores masculinos.
+        float idadeFem = 0;
+        int votos10 = 0;
+        int votos20 = 0;
+        int votos30 = 0;
+        int votos40 = 0;
+        int votos50 = 0;
 
-        float somaValor = 0;
-        int cont = 0;
-        int ateMedia = 0;
-        int acimaMedia = 0;
-        float media = 0;
-
+        
+       
         Scanner sc = new Scanner(System.in);
 
         System.out.println(" === PESQUISA ELEITORAL GOIÂNIA ===");
@@ -35,22 +40,36 @@ public class exercicio07 {
                 sexo = sc.next().charAt(0);
                 System.out.println("Digite a idade do eleitor: ");
                 idade = sc.nextInt();
-                /*
-                somaValor = somaValor + valor;
-                cont += 1;
-                media = somaValor / cont;
-                if (valor <= media) {
-                    ateMedia += 1;
+                
+                if (sexo == 'm') {
+                    contMasc += 1; 
+                    idadeMasc = idadeMasc + idade;
                 } else {
-                    acimaMedia += 1;
+                    contFem += 1;
+                    idadeFem = idadeFem + idade;
                 }
+
+                if (valor == 10) {
+                    votos10 += 1;
+                } else if (valor == 20) {
+                    votos20 += 1;
+                } else if (valor == 30) {
+                    votos30 += 1;
+                } else if (valor == 40) {
+                    votos40 += 1;
+                } else {
+                    votos50 += 1;
+                }
+                
             }
            
         } while (valor != 0);
         
-        System.out.println("A média dos salários digitados é: " + media);
-        System.out.println("A quantidade de salários até a média são: " + ateMedia);
-        System.out.println("A quantidade de salarios acima da media são: " + acimaMedia);
+        System.out.println("Quantidade de eleitores masculinos: " + contMasc);
+        System.out.println("Quantidade de eleitores femininos: " + contFem);
+        System.out.println("Idade média dos eleitores masculinos é: " + idadeMasc / contMasc + " anos.");
+        System.out.println("Idade média dos eleitores femininos é: " + idadeFem / contFem + " anos.");
+        
 
         sc.close();
 
