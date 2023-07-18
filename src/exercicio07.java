@@ -36,11 +36,11 @@ public class exercicio07 {
             do {
                 System.out.print("Digite o número do candidato: ");
                 valor = sc.nextFloat();
-                if ((valor != 10) & (valor != 20) & (valor != 30) & (valor != 40) & (valor != 50)) {
+                if ((valor != 10) & (valor != 20) & (valor != 30) & (valor != 40) & (valor != 50) & (valor != 0)) {
                     System.out.println("Nº do candidato inválido, por gentiliza digite um valor válido");
                     System.out.println("Nº 10; Nº 20; Nº 30; Nº 40; Nº 50");
                 }
-            } while ((valor == 10) | (valor == 20) | (valor == 30) | (valor == 40) | (valor == 50));
+            } while ((valor != 10) & (valor != 20) & (valor != 30) & (valor != 40) & (valor != 50) & (valor != 0));
             if (valor != 0) {
                 System.out.println("Digite o Sexo do eleitor (masculino='m'/feminino = 'f'): ");
                 sexo = sc.next().charAt(0);
@@ -57,7 +57,7 @@ public class exercicio07 {
 
                 if (valor == 10) {
                     votos10 += 1;
-                    idade10 = idade;
+                    idade10 = idade10 + idade;
                     if (sexo == 'm') {
                         h10 += 1;
                     } else {
@@ -65,7 +65,7 @@ public class exercicio07 {
                     }
                 } else if (valor == 20) {
                     votos20 += 1;
-                    idade20 = idade;
+                    idade20 = idade20 + idade;
                     if (sexo == 'm') {
                         h20 += 1;
                     } else {
@@ -73,7 +73,7 @@ public class exercicio07 {
                     }
                 } else if (valor == 30) {
                     votos30 += 1;
-                    idade30 = idade;
+                    idade30 = idade30 + idade;
                     if (sexo == 'm') {
                         h30 += 1;
                     } else {
@@ -81,7 +81,7 @@ public class exercicio07 {
                     }
                 } else if (valor == 40) {
                     votos40 += 1;
-                    idade40 = idade;
+                    idade40 = idade40 + idade;
                     if (sexo == 'm') {
                         h40 += 1;
                     } else {
@@ -89,7 +89,7 @@ public class exercicio07 {
                     }
                 } else {
                     votos50 += 1;
-                    idade50 = idade;
+                    idade50 = idade50 + idade;
                     if (sexo == 'm') {
                         h50 += 1;
                     } else {
@@ -110,7 +110,7 @@ public class exercicio07 {
         } else if (votos30 > votos10 & votos30 > votos20 & votos30 > votos40 & votos30 > votos50) {
             vencedor = "Candidato 30";
             cod = 3;            
-        } else if (votos40 > votos10 & votos40 > votos20 & votos40 > votos30 & votos20 > votos50) {
+        } else if (votos40 > votos10 & votos40 > votos20 & votos40 > votos30 & votos40 > votos50) {
             vencedor = "Candidato 40";
             cod = 4;
         } else {
@@ -149,8 +149,7 @@ public class exercicio07 {
                 idadevencedor = idade50;
                 votosvencedor = votos50;
                 break;
-            default:
-                break;
+            
         }
         
         System.out.println("Quantidade de eleitores masculinos: " + contMasc);
@@ -160,8 +159,7 @@ public class exercicio07 {
         System.out.println("O vencedor da eleição é o " + vencedor);
         System.out.println("Os votantes do candidato vencedor do sexo masculino somam um total de " + hvencedor);
         System.out.println("Os votantes do candidato vencedor do sexo feminino somam um total de " + mvencedor);
-        System.out.println("A idade média dos eleitores do vencedor é de " + idadevencedor / votosvencedor );
-        
+        System.out.println("A idade média dos eleitores do vencedor é de " + idadevencedor / votosvencedor );        
         
 
         sc.close();
