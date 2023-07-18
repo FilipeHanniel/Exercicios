@@ -4,7 +4,10 @@ public class exerc02c {
         
         int i = 0;
         do {
-            System.out.println(i);
+            if ((i%2) != 0) {
+                System.out.println(i);
+                 
+            }
             i += 1;
             if (i > 500) {
                 break;
