@@ -4,6 +4,7 @@ public class exerc01 {
         
         for (int i = 1; i < 201; i++) {
             System.out.println(i);
+            System.out.println(123);
             
         }
 
