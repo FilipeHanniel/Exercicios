@@ -24,13 +24,20 @@ public class exerc06 {
                 somaValor = somaValor + valor;
                 cont += 1;
                 media = somaValor / cont;
-                if (valor <= media) {
-                    ateMedia += 1;
-                } else {
-                    acimaMedia += 1;
-                }
+                
             }
            
+        } while (valor != 0);
+
+        System.out.println("Agora repita os salarios digitados e depois zero para sair: ");
+        do {
+            System.out.print("Digite o salário do funcionário: ");
+            valor = sc.nextFloat(); 
+            if (valor <= media) {
+                ateMedia += 1;
+            } else {
+                acimaMedia += 1;
+            }
         } while (valor != 0);
         
         System.out.println("A média dos salários digitados é: " + media);
