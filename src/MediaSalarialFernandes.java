@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MediaSalarial {
+public class MediaSalarialFernandes {
     public static void main(String[] args) {
         Scanner leituraScanner = new Scanner(System.in);
         System.out.println("============================");
@@ -21,15 +21,17 @@ public class MediaSalarial {
             } else {
                 somaDosSalarios += salario;
                 contadorDeSalarios += 1;
-                if (contadorDeSalarios > 0) {
-                    mediaDosSalarios = somaDosSalarios / contadorDeSalarios;
-                    System.out.println("O valor médio dos salários é de " + mediaDosNumeros + " .");
-                }
 
             }
         }
+      
 
-        boolean digiteNovamente = true;
+        if (contadorDeSalarios > 0) {
+            mediaDosSalarios = somaDosSalarios / contadorDeSalarios;
+            System.out.println("O valor médio dos salários é de " + mediaDosSalarios + " .");
+        }
+
+        digiteNovamente = true;
         while (digiteNovamente) {
             System.out.print("Digite valor do salário ou zero para sair: ");
             salario = leituraScanner.nextInt();
